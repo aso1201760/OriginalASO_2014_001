@@ -48,7 +48,25 @@ View.OnClickListener
 			    case 1:
 			    	// 1なら中吉のページへ飛ばす
 			    	// インテントのインスタンス生成
-			    	intent = newIntent
+			    	intent = new Intent(MainActivity.this, ChuukichiActivity.class);
+			    	// 次画面のアクティビティ起動
+			    	startActivity(intent);
+			    	break;
+			    case 2:
+			    	// 2なら凶のページへ飛ばす
+			    	// インテントのインスタンス生成
+			    	intent = new Intent(MainActivity.this, KyouActivity.class);
+			    	// 次画面のアクティビティ起動
+			    	startActivity(intent);
+			    	break;
+			    case 3:
+			    	// 3なら大凶のページへ飛ばす
+			    	// インテントのインスタンス生成
+			    	intent = new Intent(MainActivity.this, DaikyouActivity.class);
+			    	// 次画面のアクティビティ起動
+			    	startActivity(intent);
+			    	break;
+			}
 			}
 		}
 	}
