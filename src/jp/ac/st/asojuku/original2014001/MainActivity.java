@@ -1,11 +1,13 @@
 package jp.ac.st.asojuku.original2014001;
 
 import java.util.Random;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends Activity implements
 View.OnClickListener
@@ -24,7 +26,7 @@ View.OnClickListener
 	public void onClick(View v) {
 		// TODO 自動生成されたメソッド・スタブ
 		switch(v.getId()){ //どのボタンが押されたか判定
-		case R.id.btnOK: //btnMsgが押されたから入力
+			case R.id.btnOK: //btnMsgが押されたから入力
 			//エディットテキストから入力内容を取り出す
 			EditText etv = (EditText)findViewById(R.id.edtName);
 			String inputMsg = etv.getText().toString();
@@ -41,35 +43,32 @@ View.OnClickListener
 			    case 0:
 			    	// 0なら大吉のページへ飛ばす
 			    	// インテントのインスタンス生成
-			    	intent = new Intent(MainActivity.this, DaikichiActivity.class);
-			    	// 次画面のアクティビティ起動
-			    	startActivity(intent);
+			    	intent = new Intent(MainActivity.this, Daikichi.class);
 			    	break;
 			    case 1:
 			    	// 1なら中吉のページへ飛ばす
 			    	// インテントのインスタンス生成
-			    	intent = new Intent(MainActivity.this, ChuukichiActivity.class);
-			    	// 次画面のアクティビティ起動
-			    	startActivity(intent);
+			    	intent = new Intent(MainActivity.this, Chuukichi_activity.class);
 			    	break;
 			    case 2:
 			    	// 2なら凶のページへ飛ばす
 			    	// インテントのインスタンス生成
-			    	intent = new Intent(MainActivity.this, KyouActivity.class);
-			    	// 次画面のアクティビティ起動
-			    	startActivity(intent);
+			    	intent = new Intent(MainActivity.this, Kyou_activity.class);
 			    	break;
 			    case 3:
 			    	// 3なら大凶のページへ飛ばす
 			    	// インテントのインスタンス生成
-			    	intent = new Intent(MainActivity.this, DaikyouActivity.class);
-			    	// 次画面のアクティビティ起動
-			    	startActivity(intent);
+			    	intent = new Intent(MainActivity.this, Daikyou_actvity.class);
 			    	break;
+				}
+				intent.putExtra("name", inputMsg);
+				//次の画面のアクティビティ起動
+				startActivity(intent);
 			}
 			}
-		}
-	}
+
+
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

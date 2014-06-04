@@ -10,4 +10,17 @@
         android:layout_height="wrap_content"
         android:text="中吉です" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/chuukichi" />
+
+    <TextView
+        android:id="@+id/txvMsg4"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.40"
+        android:text="TextView" />
+
 </LinearLayout>
